@@ -22,7 +22,7 @@ function App() {
   const handleJobRoleSubmit = async () => {
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:3004/api/job-role', { jobRole });
+      const response = await axios.post('https://tes-gngwa0fbg4fadddm.eastus-01.azurewebsites.net/api/job-role', { jobRole });
       setAutoFilledData(response.data['Auto-Filled Data']);
       setQuestions(response.data['Questions for Job Creator']);
     } catch (error) {
@@ -45,7 +45,7 @@ function App() {
   const handleFinalSubmit = async () => {
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:3004/api/final-description', {
+      const response = await axios.post('https://tes-gngwa0fbg4fadddm.eastus-01.azurewebsites.net/api/final-description', {
         jobRole,
         autoFilledData,
         answers,
