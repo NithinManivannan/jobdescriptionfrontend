@@ -1,11 +1,9 @@
+// src/features/wordsSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 export const wordsSlice = createSlice({
   name: 'words',
-  initialState: {
-    goodWords: [],
-    badWords: []
-  },
+  initialState: { goodWords: [], badWords: [] },
   reducers: {
     addGoodWord: (state, action) => {
       state.goodWords.push(action.payload);
@@ -18,10 +16,9 @@ export const wordsSlice = createSlice({
     },
     removeBadWord: (state, action) => {
       state.badWords = state.badWords.filter(word => word !== action.payload);
-    }
-  }
+    },
+  },
 });
 
 export const { addGoodWord, removeGoodWord, addBadWord, removeBadWord } = wordsSlice.actions;
-
 export default wordsSlice.reducer;
