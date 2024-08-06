@@ -35,9 +35,7 @@ function JobDescriptionGenerator() {
     const handleGenerateDescription = async () => {
         setIsLoading(true);
         try {
-            console.log(process.env.REACT_APP_API_URL);
-
-            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/final-description`, {
+            const response = await axios.post('https://jobdescriptionbackend-b8b5fpcrgab3fre3.eastus-01.azurewebsites.net/api/final-description', {
                 jobTitle,
                 wordsToUse: wordsToInclude.split(','), // Split string into array by commas
                 wordsToAvoid: wordsToAvoid.split(','), // Split string into array by commas
